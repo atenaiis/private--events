@@ -8,9 +8,35 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </head>
 
   <body>
+  <!-- Just an image -->
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <div class="navbar-brand">
+       
+        <h1>Private Events</h1>
+      </div>
+
+      <div class="nav-item  d-flex flex-row ">
+        <li class="nav-link "><%= link_to "Users", users_path, :class => 'navbar-link' %></li>
+        <li class="nav-link "><%= link_to "Events", events_path, :class => 'navbar-link' %></li>
+       
+      </div>
+
+  
+      
+
+    
+
+
+
+    </nav>
+</div>
+    <main class="container-fluid">
     <%= yield %>
+    </main>
   </body>
 </html>

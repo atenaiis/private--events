@@ -1,7 +1,14 @@
 <h2>Sign up</h2>
 
 <%= form_with model: @user do |form| %>
-	<%= form.label "Name" %>
-	<%= form.text_field :name %><br><br>
+	<div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div><br>
 	<%= form.submit "Create" %>
 <% end %>

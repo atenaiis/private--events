@@ -23,7 +23,7 @@
           <td><%= event.local %></td>
           <td><%= event.description %></td>
           <td><%= link_to 'Show', event %></td>
-          <%= link_to 'New Event', new_event_path, class: 'orange event_title fa fa-plus' %>
+          <td><%= link_to "Attend", event_attendances_path(event.id), method: :post, class: "#{display_attendee(event)}"%></td>
         </tr>
       <% end %>
     </tbody>

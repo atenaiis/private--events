@@ -14,11 +14,23 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.events.build(event_params)
-    @event.save
-    redirect_to "/events/#{@event.id}"
+    @event = Event.new(event_params)
+    @event.creator_id = current_user.id
+    respond_to do |format|
+      if @event.save
+        format.html { redirect_to events_path, notice: 'Event was successfully created.' }
+        # format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :new }
+        format.json { render json: @event.errors, status: :unprocessable_entity }
+      end
+    end
   end
-
+  def invite
+    invitee = User.find_by(name: params[:name])
+    UserEvent.create(attendee_id: invitee.id, attended_event_id: params[:event_id]) unless invitee.nil?
+    redirect_to "/events/#{params[:event_id]}"
+  end
   def show
     @event = Event.find(params[:id])
   end

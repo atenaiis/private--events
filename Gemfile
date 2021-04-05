@@ -35,6 +35,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'simple_form', '~> 5.1'
+  
 end
 
 group :development do

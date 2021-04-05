@@ -1,6 +1,6 @@
 <div class="card">
-  <div class="text-center card-header">
-  <h3>  Upcoming Events</h3>
+  <div class="card-header">
+    Upcoming Events
   </div>
   <div class="card-body p-0">
   <table class="table table-striped">
@@ -23,7 +23,7 @@
           <td><%= event.local %></td>
           <td><%= event.description %></td>
           <td><%= link_to 'Show', event %></td>
-          <td><%= link_to "Attend", event_event_attendings_path(event.id), method: :post, class: "#{display_attendee(event)}"%><%= image_tag("carraca.svg", class: "#{display_check(event)}", size: "20x20" ) %></td>
+          <%= link_to 'New Event', new_event_path, class: 'orange event_title fa fa-plus' %>
         </tr>
       <% end %>
     </tbody>
@@ -34,8 +34,8 @@
 <hr>
 
 <div class="card">
-  <div class="text-center card-header">
-    <h3>Past Events</h3>
+  <div class="card-header">
+    Past Events
   </div>
   <div class="card-body p-0">
   <table class="table table-striped">

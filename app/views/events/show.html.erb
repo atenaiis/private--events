@@ -18,8 +18,7 @@
 
     <label>Author: </label>
     <p><%= @event.creator.name %></p>
-
-    <td><%= link_to "Attend", event_event_attendings_path(@event.id), method: :post %></td>
+    <td><%= link_to "Attend", event_attendances_path(@event.id), method: :post %></td>
 
   </div>
 
@@ -31,5 +30,3 @@
     <% end %>
     </ul>
   </div>
-  
-</div>

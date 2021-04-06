@@ -21,7 +21,7 @@ body {
   margin: 0 auto;
   max-width: 100%;
 }
-  
+
 h1,
 h2,
 h3,
@@ -32,13 +32,13 @@ h6,
   font-family: 'Kumbh Sans', sans-serif;
   font-weight: 700;
 }
-  
+
 body,
 p,
 ol,
 ul,
 td {
-  font-family:'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
   font-size: 13px;
   line-height: 18px;
 }

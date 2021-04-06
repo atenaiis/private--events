@@ -35,7 +35,7 @@
           <li><span>You are Logged In, <%= current_user.name %></span> </li>|
           <li class= "mb-0"> <%= link_to "Logout", controller: "sessions", action: "logout", :class => 'navbar-link ' %></li>
         <% else %>
-        <li  ><span class="glyphicon text-white glyphicon-log-in > <%= link_to "Login", '/login', method: :get, :class => 'navbar-link' %> </span></li> |
+        <li  ><span class="glyphicon text-white glyphicon-log-in "> <%= link_to "Login", '/login', method: :get, :class => 'navbar-link' %> </span></li> |
         <li ><span class="glyphicon text-white glyphicon-user"> <%= link_to "Sign Up", '/users/new', method: :get, :class => 'navbar-link' %></span></li>
         <%end%>
         </ul>

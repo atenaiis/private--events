@@ -5,15 +5,17 @@
 
   <div class="col">
 
-    <h4>User Data:</h4>
+    <h3>User Data:</h3>
 
-    <label>Name: </label>
-    <h5><%= @user.name %></h5>
+    <h4>Name: </h4>
+    <h4><%= @user.name %></h4>
 
   </div>
   
-  <div class="column">
-        <p class="title has-text-dark has-text-centered">Created Events</p>
+  <div class="col card">
+  <div class="card-header">
+        <h4 class="title has-text-dark has-text-centered">Created Events</h4>
+        </div>
         <ul class="created-events-list">
           <% @events.each do |event| %>
             <li class="box has-text-centered">
@@ -25,23 +27,24 @@
       </div>
   
  
-    <div class="col">
+    <div class="col card">
+    <div class="card-header">
     <h4>Upcoming</h4>
     </div>
     <ul class="list-group col">
       <% @user.attended_events.upcoming.each do |event| %>
         <li class="list-group-item col"><tr>
         <td><%= event.title %></td>
-        <label>Author: </label>
-    <%= event.creator.name %>
         
        </tr></li>
        
        
       <% end %>
       </ul>
+      </div>
     <br>
-    <div class="col">
+    <div class="col card">
+    <div class="card-header">
     <h4>Attended</h4>
     </div>
     <ul class="list-group col">

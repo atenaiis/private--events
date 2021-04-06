@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header">
-    Upcoming Events
+   <h3> Upcoming Events</h3>
   </div>
   <div class="card-body p-0">
   <table class="table table-striped">
@@ -10,6 +10,7 @@
         <th>Date</th>
         <th>Location</th>
         <th>Description</th>
+        <th>Creator</th>
         <th colspan="2"></th>
       </tr>
     </thead>
@@ -22,6 +23,7 @@
           <td><%= event.date %></td>
           <td><%= event.local %></td>
           <td><%= event.description %></td>
+          <td><%= event.creator.name %></td>
           <td><%= link_to 'Show', event %></td>
           <td><%= link_to "Attend", event_attendances_path(event.id), method: :post, class: "#{display_attendee(event)}"%></td>
         </tr>
@@ -35,7 +37,7 @@
 
 <div class="card">
   <div class="card-header">
-    Past Events
+<h3>Past Events</h3>
   </div>
   <div class="card-body p-0">
   <table class="table table-striped">
@@ -45,6 +47,7 @@
         <th>Date</th>
         <th>Location</th>
         <th>Description</th>
+        <th>Creator</th>
         <th colspan="2"></th>
       </tr>
     </thead>
@@ -57,6 +60,7 @@
           <td><%= event.date %></td>
           <td><%= event.local %></td>
           <td><%= event.description %></td>
+           <td><%= event.creator.name %></td>
           <td><%= link_to 'Show', event %></td>
           <td></td>
           

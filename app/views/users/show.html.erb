@@ -12,9 +12,19 @@
 
   </div>
   
-
+  <div class="column">
+        <p class="title has-text-dark has-text-centered">Created Events</p>
+        <ul class="created-events-list">
+          <% @events.each do |event| %>
+            <li class="box has-text-centered">
+              <%= link_to  event.title, event_path(event.id) %>
+              <%= content_tag(:p, "#{event.date}  ") %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
   
-   
+ 
     <div class="col">
     <h4>Upcoming</h4>
     </div>
@@ -22,6 +32,8 @@
       <% @user.attended_events.upcoming.each do |event| %>
         <li class="list-group-item col"><tr>
         <td><%= event.title %></td>
+        <label>Author: </label>
+    <%= event.creator.name %>
         
        </tr></li>
        

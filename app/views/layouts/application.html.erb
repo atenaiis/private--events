@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -14,29 +15,33 @@
   <body>
   <!-- Just an image -->
   <div class="container-fluid">
-  <nav class="navbar navbar-inverse ">
-  <p class="navbar-brand text-white">Private Events</p>
-  <p class="navbar-text ml-auto">
+  <div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>Private Events</h1>
+  </div>
+  </div>
        
-   
-      <div class="nav-item  d-flex flex-row ">
-        <li class="nav-link "><%= link_to "Users", users_path, :class => 'navbar-link' %></li>
-        <li class="nav-link "><%= link_to "Events", events_path, :class => 'navbar-link' %></li>
+  <div class="container-fluid">
+  <nav class="navbar navbar-inverse">
+  <div class="collapse navbar-collapse" id="myNavbar">
+  <ul class="nav navbar-nav navbar-left list-group list-group-horizontal">
+        <li class="nav-link "><%= link_to "Users", users_path %></li>
+        <li class="nav-link "><%= link_to "Events", events_path %></li>
         <li class="nav-link "><%= link_to "Create Event", new_event_path, :class => "navbar-link #{hide_if_not_login}" %></li>
-      </div>
+        </ul>
+        
 
-      <div class="navbar-text text-right">
+        <ul class="nav navbar-nav collapse navbar-collapse text-white  navbar-right  mt-4">
         <% if logged_in? %>
-          <span>You are Logged In, <%= current_user.name %></span> |
-          <%= link_to "Logout", controller: "sessions", action: "logout", :class => 'navbar-link' %>
+          <li><span>You are Logged In, <%= current_user.name %></span> </li>|
+          <li class= "mb-0"> <%= link_to "Logout", controller: "sessions", action: "logout", :class => 'navbar-link ' %></li>
         <% else %>
-          <%= link_to "Login", '/login', method: :get, :class => 'navbar-link' %> |
-          <%= link_to "Sign Up", '/users/new', method: :get, :class => 'navbar-link' %>
+        <li  ><span class="glyphicon text-white glyphicon-log-in > <%= link_to "Login", '/login', method: :get, :class => 'navbar-link' %> </span></li> |
+        <li ><span class="glyphicon text-white glyphicon-user"> <%= link_to "Sign Up", '/users/new', method: :get, :class => 'navbar-link' %></span></li>
         <%end%>
-      </div>
-
-    </nav>
-</div>
+        </ul>
+       </div>
+        </nav>
+        </div>
     <main class="container-fluid">
     <%= yield %>
     </main>

@@ -1,4 +1,3 @@
-# rubocop:disable Layout/LineLength
 require 'rails_helper'
 
 RSpec.describe Attendance, type: :model do
@@ -24,4 +23,3 @@ RSpec.describe Attendance, type: :model do
     it { should belong_to(:attended_event) }
   end
 end
-# rubocop:enable Layout/LineLength

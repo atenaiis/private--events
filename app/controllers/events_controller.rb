@@ -26,11 +26,13 @@ class EventsController < ApplicationController
       end
     end
   end
+
   def invite
     invitee = User.find_by(name: params[:name])
     UserEvent.create(attendee_id: invitee.id, attended_event_id: params[:event_id]) unless invitee.nil?
     redirect_to "/events/#{params[:event_id]}"
   end
+
   def show
     @event = Event.find(params[:id])
   end

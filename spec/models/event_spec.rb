@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe Event, type: :model do
   let(:test_user) { User.create(name: 'atenais') }
   let(:subject) do
-                    described_class.new(title: 'brunch',
-                     description: 'Delicius food',
-                     date: '2021-04-15 00:00:00',
-                     local: '',
-                      creator_id: test_user.id)
+    described_class.new(title: 'brunch',
+                        description: 'Delicius food',
+                        date: '2021-04-15 00:00:00',
+                        local: '',
+                        creator_id: test_user.id)
   end
 
   describe 'validations' do
@@ -29,11 +29,5 @@ RSpec.describe Event, type: :model do
       subject.date = nil
       expect(subject).to_not be_valid
     end
-  end
-
-  describe 'associations' do
-    it { should belong_to(:creator) }
-    it { should have_many(:attendees) }
-    it { should have_many(:event_attendings) }
   end
 end

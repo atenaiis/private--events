@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
   def login; end
 
   def welcome; end
+
   def logout
     reset_session
     redirect_to '/welcome'
@@ -24,4 +25,3 @@ class SessionsController < ApplicationController
     redirect_to '/welcome'
   end
 end
-

@@ -57,6 +57,7 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'rubocop', '~>0.81.0'
   gem 'webdrivers'
+  gem 'shoulda-matchers', '~> 4.0'
  
 end
 

@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 # Specs in this file have access to a helper object that includes
 # the AttendancesHelper. For example:
 #
@@ -12,4 +13,8 @@ require 'rails_helper'
 # end
 RSpec.describe AttendancesHelper, type: :helper do
   pending "add some examples to (or delete) #{__FILE__}"
+end
+RSpec.configure do |config|
+  config.include(Shoulda::Matchers::ActiveModel, type: :model)
+  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
 end

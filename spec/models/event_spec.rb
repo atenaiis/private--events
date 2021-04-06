@@ -5,9 +5,9 @@ RSpec.describe Event, type: :model do
   let(:subject) do
                     described_class.new(title: 'brunch',
                      description: 'Delicius food',
-                     date: '2021-04-15 00:00:00',--
+                     date: '2021-04-15 00:00:00',
                      local: '',
-                        creator_id: test_user.id)
+                      creator_id: test_user.id)
   end
 
   describe 'validations' do

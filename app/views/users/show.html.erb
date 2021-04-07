@@ -1,0 +1,58 @@
+<div class="container-fluid ">
+<h3 class="text-center">Attendance List</h3> <br><br>
+
+<div class="row">
+
+  <div class="col">
+
+    <h3>User Data:</h3>
+
+    <h4>Name: </h4>
+    <h4><%= @user.name %></h4>
+
+  </div>
+  <div class="col card">
+    <div class="card-header">
+            <h3 class=" is-3 has-text-centered">Created Events: <%= @user.events.count %></h3>
+            </div
+            <ul>
+              <% if @user.events.empty? %>
+                <p>User is not hosting</p>
+              <% else %>
+                <% @user.events.each do |event| %>
+                  <li class="has-text-centered "><%=link_to event.title, event_path(event) %></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+ 
+    <div class="col card">
+    <div class="card-header">
+    <h4>Upcoming</h4>
+    </div>
+    <ul class="list-group col">
+      <% @user.attended_events.upcoming.each do |event| %>
+        <li class="list-group-item col"><tr>
+        <td><%= event.title %></td>
+        
+       </tr></li>
+       
+       
+      <% end %>
+      </ul>
+      </div>
+    <br>
+    <div class="col card">
+    <div class="card-header">
+    <h4>Attended</h4>
+    </div>
+    <ul class="list-group col">
+    <% @user.attended_events.previous.each do |event| %>
+      <li class="list-group-item col"><tr>
+        <td><%= event.title %></td>
+       </tr></li>
+    <% end %>
+    </ul>
+    
+  </div>
+ </div>

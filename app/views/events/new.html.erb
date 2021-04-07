@@ -1,0 +1,30 @@
+<div class="container  ">
+<h1>Create a New Event</h1>
+<br><br>
+
+<%= form_with model: @event do |form| %>
+	<div class="form-group text-center col-3">
+    <%= form.label :title %>
+    <%= form.text_area :title %>
+  </div>
+
+  <div class="form-group text-center col-3">
+  <%= form.label :date %>
+  <%= form.date_select :date %>
+</div>
+
+<div class="form-group text-center col-3">
+  <%= form.label :location %>
+  <%= form.text_area :location %>
+</div>
+
+<div class="form-group text-center col-3">
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+</div><br><br>
+<button type="button" class="btn btn-default ">
+	<%= form.submit "Create" %>
+</button>
+	
+<% end %>
+</div>

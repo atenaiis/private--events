@@ -5,12 +5,45 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </head>
 
   <body>
+  <!-- Just an image -->
+  <div class="container-fluid">
+  <div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>Private Events</h1>
+  </div>
+  </div>
+       
+  <div class="container-fluid">
+  <nav class="navbar navbar-inverse">
+  <div class="collapse navbar-collapse" id="myNavbar">
+  <ul class="nav navbar-nav navbar-left list-group list-group-horizontal">
+        <li class="nav-link "><%= link_to "Users", users_path %></li>
+        <li class="nav-link "><%= link_to "Events", events_path %></li>
+        <li class="nav-link "><%= link_to "Create Event", new_event_path, :class => "navbar-link #{hide_if_not_login}" %></li>
+        </ul>
+        
+
+        <ul class="nav navbar-nav collapse navbar-collapse text-white  navbar-right  mt-4">
+        <% if logged_in? %>
+          <li><span>You are Logged In, <%= current_user.name %></span> </li>|
+          <li class= "mb-0"> <%= link_to "Logout", controller: "sessions", action: "logout", :class => 'navbar-link ' %></li>
+        <% else %>
+        <li  ><span class="glyphicon text-white glyphicon-log-in "> <%= link_to "Login", '/login', method: :get, :class => 'navbar-link' %> </span></li> |
+        <li ><span class="glyphicon text-white glyphicon-user"> <%= link_to "Sign Up", '/users/new', method: :get, :class => 'navbar-link' %></span></li>
+        <%end%>
+        </ul>
+       </div>
+        </nav>
+        </div>
+    <main class="container-fluid">
     <%= yield %>
+    </main>
   </body>
 </html>

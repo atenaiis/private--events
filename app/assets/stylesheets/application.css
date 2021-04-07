@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 700;
+}
+
+body,
+p,
+ol,
+ul,
+td {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  line-height: 18px;
+}

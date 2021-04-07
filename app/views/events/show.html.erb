@@ -1,0 +1,39 @@
+<h2>Event Data:</h2>
+<div class="row container-fluid">
+
+ 
+
+    
+ 
+  <div class=" card">
+  <div class="card-header col">
+    <label>Title: </label>
+    <p><%= @event.title %></p>
+
+    <label>Date: </label>
+    <p><%= @event.date %></p>
+
+    <label>Local: </label>
+    <p><%= @event.local %></p>
+
+    <label>Description: </label>
+    <p><%= @event.description %></p>
+
+    <label>Author: </label>
+    <p><%= @event.creator.name %></p>
+
+  
+ </div>
+  </div>
+
+  <div class=" card">
+  <div class="card-header col ">
+    <p>Attendance List</p>
+    <ul class="list-group">
+    <% @event.attendees.each do |attendee| %>
+      <li class="list-group-item"><%= attendee.name %></li>
+    <% end %>
+    </ul>
+  </div>
+ </div>
+</div>

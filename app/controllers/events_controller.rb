@@ -16,10 +16,10 @@ class EventsController < ApplicationController
   end
 
   def create
-  @event = current_user.events.build(event_params)
-  @event.save
-  redirect_to "/events/#{@event.id}"
-end
+    @event = current_user.events.build(event_params)
+    @event.save
+    redirect_to "/events/#{@event.id}"
+  end
 
   def invite
     invitee = User.find_by(name: params[:name])
